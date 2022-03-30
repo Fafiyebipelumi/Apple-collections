@@ -113,6 +113,7 @@
 .current {
     opacity: 1;
     transform: translateX(0);
+    background-color: #f5fafd;
 }
 
 .arrow {

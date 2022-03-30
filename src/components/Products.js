@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-// import { getData } from '../api';
+import './Products.css';
+import Product from './Product';
 
 const Products = () => {
 
@@ -22,18 +23,28 @@ const Products = () => {
     }, [])
 
     return (
-        <div>
-            {list.map((item) => {
-                return (
-                    <div key={item.id}>
-                        <img src={item.imageUrl} alt='image' />
-                        <p>{item.name}</p>
-                        <p>${item.price.current.value}</p>
-                    </div>
-                );
-            })}
-        </div>
+        <>
+            <div className='products__container'>
+                <div className='side-left'></div>
+                <h2>Our Products</h2>
+            </div>
+            <div className='products'>
+                {list.map((item) => (
+                    <Product item={item} key={item.id} />
+                ))}
+            </div>
+            <div className='products__button'>
+                <button>View All</button>
+            </div>
+        </>
     );
 }
 
 export default Products;
+
+
+// <div className='products__container' key={item.id} >
+                //     <img src={item.imageUrl} alt='image' />
+                //     <h4>{item.name}</h4>
+                //     <p>${item.price.current.value}</p>
+                // </div>s

@@ -75,7 +75,7 @@ const Slider = () => {
             <div className='wrapper'>
                 {SliderData.map((item, index) => {
                     return (
-                        <div className={index === currentSlide ? 'slide current' : 'slide'} key={index}>
+                        <div className={index === currentSlide ? 'slide current' : 'slide'} key={index} bg={item.bg}>
                             {index === currentSlide && (
                                 <div className='container'>
                                     <div className='img-container'>
