@@ -21,7 +21,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    transform: translateX(-50%);
+    transhtmlForm: translateX(-50%);
     transition: all 1s ease;
 }
 
@@ -41,7 +41,7 @@
 
 .info-container h2 {
     font-size: 50px;
-    text-transform: uppercase;
+    text-transhtmlForm: uppercase;
 }
 
 .info-container p {
@@ -49,12 +49,12 @@
     font-size: 17px;
     font-weight: 500;
     letter-spacing: 3px;
-    text-transform: uppercase;
+    text-transhtmlForm: uppercase;
 }
 
 .current {
     opacity: 1;
-    transform: translateX(0);
+    transhtmlForm: translateX(0);
 } */
 
 
@@ -81,7 +81,7 @@
 }
 
 .info-container h2 {
-    text-transform: uppercase;
+    text-transhtmlForm: uppercase;
     font-size: 50px; 
     margin-bottom: 20px; 
 }
@@ -106,13 +106,13 @@
     width: 100%;
     height: 100%;
     opacity: 2;
-    transform: translateX(50%);
+    transhtmlForm: translateX(50%);
     transition: all 1.7s ease;
 }
 
 .current {
     opacity: 1;
-    transform: translateX(0);
+    transhtmlForm: translateX(0);
     background-color: #f5fafd;
 }
 
@@ -149,5 +149,9 @@
 
     .arrow {
         display: none;
+    }
+
+    .current {
+        height: 70%; 
     }
 }
