@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { NavLink } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({ item }) => {
@@ -9,11 +10,13 @@ const Product = ({ item }) => {
             <img src={item.imageUrl} alt='Image' />
             <div className='product__pricing'>
                 <h4>{item.name}</h4>
-                <p>${item.price.current.value}</p>
+                <p>{item.price.current.text}</p>
             </div>
             <div className='product__info'>
                 <div className='product__icon'>
-                    <AiOutlineShoppingCart />
+                    <NavLink to={`product/${item.id}`}>
+                        <AiOutlineShoppingCart />
+                    </NavLink>
                 </div>
             </div>
         </div>

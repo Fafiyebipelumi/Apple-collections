@@ -4,7 +4,7 @@ const Login = () => {
     return (
         <>
             {/* <!-- Button trigger modal --> */}
-            <button type="button" class="btn btn-outline-primary ms-auto" data-bs-toggle="modal" data-bs-target="#loginModal" >
+            <button type="button" className="btn btn-outline-primary ms-auto " data-bs-toggle="modal" data-bs-target="#loginModal" >
                 Login
             </button>
 
@@ -23,7 +23,7 @@ const Login = () => {
                             <button className='btn btn-primary w-100 mb-4'>
                                 <span className='fa fa-facebook me-2'></span>Sign In With Facebook
                             </button>
-                            <htmlForm>
+                            <form>
                                 <div class="mb-3">
                                     <label htmlFor="exampleInputEmail1" class="htmlForm-label">Email address</label>
                                     <input type="email" class="htmlForm-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -37,8 +37,8 @@ const Login = () => {
                                     <input type="checkbox" class="htmlForm-check-input" id="exampleCheck1" />
                                     <label class="htmlForm-check-label" htmlFor="exampleCheck1">Check me out</label>
                                 </div>
-                                <button type="submit" class="btn btn-outline-primary w-100 mt-5">Submit</button>
-                            </htmlForm>
+                                <button type="submit" class="btn btn-outline-primary w-100 mt-5">Login</button>
+                            </form>
                         </div>
                     </div>
                 </div>

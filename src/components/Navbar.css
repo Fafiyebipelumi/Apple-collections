@@ -1,10 +1,11 @@
-/* a {
+a {
     padding: 30px; 
     color: #000;
+    text-decoration: none;
 }
 
 .navbar__container {
-    height: 100px;
+    height: 60px;
     max-width: 1300px;  
 }
 
@@ -13,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -60px;
+    margin-top: -90px;
 }
 
 .left {
@@ -42,6 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end; 
+    width: 50px;
 }
 
 .right a {
@@ -104,9 +106,9 @@
     .menu-icon {
         display: block;
         position: absolute;
-        top: 28px;
+        top: 20px;
         right: 0;
-        transhtmlForm: translate(-100%, 60%);
+        transform: translate(-100%, 60%);
         font-size: 1.5rem;
         cursor: pointer;
         color: #000; 
@@ -131,9 +133,9 @@
         left: 0;  
         opacity: 1;
         transition: all 0.5s ease;
-         z-index: 1;
+        z-index: 1;
     }
-} */
+}
 
 
 

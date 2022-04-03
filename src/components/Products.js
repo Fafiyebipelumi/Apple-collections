@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './Products.css';
 import Product from './Product';
+// import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
 
     const [list, setList] = useState([]);
 
     useEffect(() => {
-        // getData()
         const options = {
             method: 'GET',
             headers: {
@@ -34,7 +35,9 @@ const Products = () => {
                 ))}
             </div>
             <div className='products__button'>
-                <button>View All</button>
+                <Link to='/shop'>
+                    <button>View All</button>
+                </Link>
             </div>
         </>
     );
