@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({ item }) => {
+
     return (
         <div className='product__container'>
             <div className='circle'></div>
