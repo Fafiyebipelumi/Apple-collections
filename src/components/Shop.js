@@ -54,13 +54,14 @@
 
 import React, { useEffect, useState } from 'react';
 import './Product.css';
-import './Products.css';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const Shop = () => {
 
     const [container, setContainer] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         const options = {
@@ -70,38 +71,49 @@ const Shop = () => {
                 'X-RapidAPI-Key': '50e5875042mshc342f1fcf2d5632p14862ajsnc51b3f2e63c7'
             }
         };
-        const URL = `https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=4209&limit=48&country=US&sort=freshness&currency=USD&sizeSchema=US&lang=en-US`
-
+        const URL = 'https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=4209&limit=8&country=US&sort=freshness&currency=USD&sizeSchema=US&lang=en-US'
         fetch(URL, options)
             .then(response => response.json())
-            .then(data => setContainer(data.products))
-            .catch(err => console.error(err));
-
+            .then(data => {
+                setLoading(false)
+                setContainer(data.products)
+            })
+            .catch(err => {
+                console.error(err)
+                setError(err.message)
+                setLoading(false)
+            });
     }, [])
 
     return (
         <>
             <h2 className='text-center mb-5'>Shop Now</h2>
+            <p className='all'>All available items</p>
+            {error && <div>{error}</div>}
+            {loading && <div className='loading'>Loading...</div>}
             <hr />
+            <h2 className='men-container'>MEN's Brands</h2>
             {container.map((item) => {
                 return (
-                    <div className='products__container'>
-                        <div className='product__container'>
-                            <div className='circle'></div>
-                            <img src={item.imageUrl} alt={item.name} />
-                            <div className='product__pricing'>
-                                <h4>{item.name}</h4>
-                                <p>{item.price.current.text}</p>
-                            </div>
-                            <div className='product__info'>
-                                <div className='product__icon'>
-                                    <NavLink to={`product/${item.id}`}>
-                                        <AiOutlineShoppingCart />
-                                    </NavLink>
+                    <>
+                        <div className='products__container'>
+                            <div className='product__container'>
+                                <div className='circle'></div>
+                                <img src={item.imageUrl} alt={item.name} />
+                                <div className='product__pricing'>
+                                    <h4>{item.name}</h4>
+                                    <p>{item.price.current.text}</p>
+                                </div>
+                                <div className='product__info'>
+                                    <div className='product__icon'>
+                                        <NavLink to={`product/${item.id}`}>
+                                            <AiOutlineShoppingCart />
+                                        </NavLink>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </>
                 )
             })}
 

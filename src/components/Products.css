@@ -2,20 +2,21 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
-.products__item { 
+.products__item {
     padding: 20px;
     display: grid;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .products__container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .side-left {
@@ -26,7 +27,7 @@
 
 .products__container h2 {
     text-transform: uppercase;
-    font-size: 40px; 
+    font-size: 40px;
     margin-left: 10px;
 }
 
@@ -37,7 +38,7 @@
 }
 
 .products__button a {
-    width: 90%; 
+    width: 90%;
 }
 
 /* a {
@@ -64,6 +65,23 @@ button:hover {
     transition: all 0.4s ease-in-out;
 }
 
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.all {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.men-container {
+    text-align: center;
+}
+
 @media screen and (max-width: 960px) {
     button {
         width: 50%;
@@ -81,8 +99,8 @@ button:hover {
 
     .products__button a {
         width: 50%;
-        padding: 5px; 
+        padding: 5px;
         font-size: 15px;
-        margin-left: 30px; 
+        margin-left: 30px;
     }
 }

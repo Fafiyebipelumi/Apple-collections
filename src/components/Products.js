@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 const Products = () => {
 
     const [list, setList] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         const options = {
@@ -19,8 +21,15 @@ const Products = () => {
 
         fetch('https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=4209&limit=8&country=US&sort=freshness&currency=USD&sizeSchema=US&lang=en-US', options)
             .then(response => response.json())
-            .then(data => setList(data.products))
-            .catch(err => console.error(err));
+            .then(data => {
+                setIsLoading(false)
+                setList(data.products)
+            })
+            .catch(err => {
+                console.error(err)
+                setIsLoading(false)
+                setError(err.message)
+            });
     }, [])
 
     return (
@@ -30,6 +39,8 @@ const Products = () => {
                 <h2>Our Products</h2>
             </div>
             <div className='products'>
+                {error && <div>{error}</div>}
+                {isLoading && <div className='loading'>Loading...</div>}
                 {list.map((item) => (
                     <Product item={item} key={item.id} />
                 ))}

@@ -4,11 +4,9 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const CartBtn = () => {
     return (
-        <>
-            <NavLink to='/cart' className='btn btn-outline-primary ms-2' >
-                <AiOutlineShoppingCart /> Cart(0)
-            </NavLink>
-        </>
+        <NavLink to='/cart' className='btn btn-outline-primary ms-2' >
+            <AiOutlineShoppingCart /> Cart(0)
+        </NavLink>
     );
 }
 

@@ -8,7 +8,7 @@ const Product = ({ item }) => {
     return (
         <div className='product__container'>
             <div className='circle'></div>
-            <img src={item.imageUrl} alt='Image' />
+            <img src={item.imageUrl} alt={item.brandName} />
             <div className='product__pricing'>
                 <h4>{item.name}</h4>
                 <p>{item.price.current.text}</p>

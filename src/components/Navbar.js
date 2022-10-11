@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className='navbar__container'>
             <div className='nav__container'>
                 <div className='center'>
-                    <Link to='/' onClick={closeMobileMenu}>SS Collections</Link>
+                    <Link to='/' onClick={closeMobileMenu}>APPLE Collections</Link>
                 </div>
                 <div className="menu-icon" onClick={handleClick}>
                     {click ? <FaTimes /> : <FaBars />}
